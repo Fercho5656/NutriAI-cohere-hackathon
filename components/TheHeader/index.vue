@@ -1,5 +1,5 @@
 <template>
-  <header class="p-5 font-medium text-xl">
+  <header class="p-5 px-10 font-medium text-xl">
     <nav class="flex gap-x-8">
       <nuxt-link to="/">
         <nuxt-img src="/logo.png" width="75" />
@@ -14,7 +14,7 @@
             <moon-icon class="w-8" v-else />
           </button>
           <nuxt-link to="/login">Login</nuxt-link>
-          <nuxt-link class="p-2 px-6 bg-gray-50 text-green-400 dark:text-slate-800 rounded-full font-semibold"
+          <nuxt-link class="p-2 px-6 bg-gray-50 text-green-400 dark:text-slate-800 rounded-full font-semibold hover:bg-gray-200 dark:hover:bg-gray-300 transition-colors"
             to="/signup">Sign Up</nuxt-link>
         </li>
       </ul>
