@@ -1,11 +1,10 @@
 <template>
   <div>
-    <section class="h-screen p-8 flex lg:justify-around items-center">
+    <section class="min-h-screen p-8 py-20 flex lg:justify-around items-center">
       <div class="flex flex-col gap-y-10 self-start">
-        <p class="font-bold text-3xl lg:text-5xl max-w-[30ch] lg:max-w-[25ch]">Achieve Your Health Goals with
-          AI-Generated
-          Personalized Nutrition</p>
-        <p class="text-xl lg:text-2xl max-w-[50ch]">Our AI-powered personalized nutrition plan is the solution you need
+        <p class="font-bold text-4xl lg:text-5xl max-w-[35ch] lg:max-w-[25ch]">Achieve Your Health Goals with
+          AI-Generated Personalized Nutrition</p>
+        <p class="text-2xl lg:text-3xl max-w-[50ch]">Our AI-powered personalized nutrition plan is the solution you need
           to
           achieve your health goals. Using
           cutting-edge NLP and NLG technology, our tool generates a customized plan tailored to your unique needs and
@@ -19,7 +18,7 @@
       <nuxt-img fit="contain" sizes="lg:500px" format="webp" src="/landing-image.png"
         class="hidden lg:block self-end" />
     </section>
-    <section class="bg-white dark:bg-green-800 text-gray-700 dark:text-gray-200 py-8 h-screen">
+    <section class="min-h-screen bg-white dark:bg-green-800 text-gray-700 dark:text-gray-200 py-8">
       <div class="flex p-5 justify-around flex-wrap gap-y-8">
         <div class="flex flex-col gap-y-5">
           <p class="text-5xl font-bold">How it works</p>
@@ -44,11 +43,12 @@
       <nuxt-img fit="contain" sizes="lg:350px" format="webp" src="/image.png"
         class="hidden lg:block self-end mx-auto" />
     </section>
-    <section class="h-screen p-8 flex flex-col gap-y-5">
-      <h2 class="text-5xl text-center font-bold max-w-[20ch] mx-auto lg:max-w-[25ch] self-start">How to get started</h2>
-      <div class="flex flex-wrap justify-center">
+    <section class="min-h-screen p-8 flex flex-col gap-y-8">
+      <h2 class="mt-8 text-5xl text-center font-bold max-w-[20ch] mx-auto lg:max-w-[25ch] self-start">How to get started
+      </h2>
+      <div class="flex flex-wrap justify-center my-auto">
         <ul class="flex flex-col flex-wrap justify-center 2xl:flex-row gap-8 text-2xl">
-          <li class=" max-w-[50ch]">
+          <li class=" max-w-[45ch]">
             <p>
               Step 1: Registration
             </p>
@@ -58,7 +58,7 @@
               get started.
             </p>
           </li>
-          <li class=" max-w-[50ch]">
+          <li class=" max-w-[45ch]">
             <p>
               Step 2: Enter Body Data
             </p>
@@ -68,7 +68,7 @@
               plan that works best for you.
             </p>
           </li>
-          <li class=" max-w-[50ch]">
+          <li class=" max-w-[45ch]">
             <p>
               Step 3: Get Plan
             </p>
@@ -80,6 +80,8 @@
           </li>
         </ul>
       </div>
+      <nuxt-img fit="contain" sizes="lg:350px" format="webp" src="/img2.webp"
+        class="hidden lg:block self-end mx-auto" />
     </section>
   </div>
 </template>
