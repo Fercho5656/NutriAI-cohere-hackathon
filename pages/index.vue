@@ -47,19 +47,18 @@
     <section class="h-screen p-8 flex flex-col gap-y-5">
       <h2 class="text-5xl text-center font-bold max-w-[20ch] mx-auto lg:max-w-[25ch] self-start">How to get started</h2>
       <div class="flex flex-wrap justify-center">
-        <ul class=" max-w-prose flex flex-wrap">
-          <li>
+        <ul class="flex flex-col flex-wrap justify-center 2xl:flex-row gap-8 text-2xl">
+          <li class=" max-w-[50ch]">
             <p>
               Step 1: Registration
             </p>
             <p>
               Get started on your personal nutrition journey with just a few clicks. Sign up now and gain access to all
               the features and benefits of our app. No prior experience needed, simply enter your basic information to
-              get
-              started.
+              get started.
             </p>
           </li>
-          <li>
+          <li class=" max-w-[50ch]">
             <p>
               Step 2: Enter Body Data
             </p>
@@ -69,7 +68,7 @@
               plan that works best for you.
             </p>
           </li>
-          <li>
+          <li class=" max-w-[50ch]">
             <p>
               Step 3: Get Plan
             </p>
