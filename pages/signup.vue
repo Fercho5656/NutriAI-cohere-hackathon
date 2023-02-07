@@ -10,9 +10,6 @@
         <auth-button @login="login" provider="google" />
         <auth-button @login="login" provider="github" />
       </form>
-      <p class="text-red-500 text-xl">
-        Already have an account? <nuxt-link to="/login">Log in</nuxt-link>
-      </p>
     </div>
   </div>
 </template>

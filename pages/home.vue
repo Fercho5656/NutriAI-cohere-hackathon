@@ -1,5 +1,7 @@
 <template>
-  <h1>Home</h1>
+  <nuxt-link to="/plans/new" class="btn btn-primary">
+    Create a new plan
+  </nuxt-link>
 </template>
 
 <script setup lang="ts">

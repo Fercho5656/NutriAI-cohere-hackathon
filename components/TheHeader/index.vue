@@ -14,7 +14,6 @@
             <moon-icon class="w-8" v-else />
           </button>
           <div class=" flex items-center gap-x-3" v-if="!user">
-            <nuxt-link to="/login">Login</nuxt-link>
             <nuxt-link
               class="p-2 px-6 bg-gray-50 text-green-400 dark:text-slate-800 rounded-full font-semibold hover:bg-gray-200 dark:hover:bg-gray-300 transition-colors"
               to="/signup">Sign Up</nuxt-link>
