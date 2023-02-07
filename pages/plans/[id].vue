@@ -31,6 +31,10 @@
 <script setup lang="ts">
 import IPlan from '~~/interfaces/IPlan';
 
+definePageMeta({
+  middleware: ['auth'],
+})
+
 const plan = ref<IPlan>()
 const userStats = ref()
 const route = useRoute()

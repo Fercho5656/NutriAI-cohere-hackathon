@@ -21,6 +21,10 @@ import { PlusIcon } from '@heroicons/vue/24/solid'
 import IPlan from '~~/interfaces/IPlan';
 import { getAllPlans } from '~~/services/plan';
 
+definePageMeta({
+  middleware: ['auth'],
+})
+
 const plans = ref<IPlan[]>([])
 const { data, error } = await useFetch('/api/plan', {
   headers: useRequestHeaders(['cookie']) as Record<string, string>

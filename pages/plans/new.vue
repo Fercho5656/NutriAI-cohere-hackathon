@@ -33,6 +33,10 @@
 import { IUserStats } from '~~/interfaces/IUserStats';
 import { PaperAirplaneIcon } from '@heroicons/vue/24/solid';
 
+definePageMeta({
+  middleware: ['auth'],
+})
+
 const userStats = ref<IUserStats>()
 const router = useRouter()
 const age = ref()
