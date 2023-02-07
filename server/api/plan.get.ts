@@ -8,7 +8,7 @@ export default defineEventHandler(async (event): Promise<ISupabaseQuery<IPlan[]>
     .from('plan')
     .select('*')
   if (data == null) return { data: [], error }
-  return { data, error }
+  return { data, error: undefined }
 })
 
 /* export const getAllPlans = async (): Promise<ISupabaseQuery<IPlan[]>> => {
