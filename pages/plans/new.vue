@@ -23,8 +23,10 @@
         <option value="1.9">Extremely active</option>
       </ui-select>
       <p class="text-2xl text-center" v-if="energyRequirement">Energy Requirement: {{ energyRequirement ?? 0 }} KCal</p>
-      <ui-button behaviour="button" type="submit" color="primary">Submit <paper-airplane-icon
-          class="w-5 h-5" /></ui-button>
+      <ui-button :disabled="sendingForm" behaviour="button" type="submit" color="primary">{{ sendingFormText }}
+        <paper-airplane-icon class="w-5 h-5" v-if="!sendingForm" />
+        <ui-spinner v-else />
+      </ui-button>
     </form>
   </div>
 </template>
@@ -44,6 +46,8 @@ const weight = ref()
 const height = ref()
 const activityFactor = ref('-1')
 const gender = ref('-1')
+const sendingForm = ref(false)
+const sendingFormText = computed(() => sendingForm.value ? 'Creating eating plan...' : 'Submit')
 
 /**
   For men: BMR = 66.5 + (13.75 × weight in kg) + (5.003 × height in cm) - (6.75 × age)
@@ -75,6 +79,7 @@ if (userStats.value) {
 }
 
 const onSubmit = async () => {
+  sendingForm.value = true
   const userStats: IUserStats = {
     age: age.value,
     height: height.value,
