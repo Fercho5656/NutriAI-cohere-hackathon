@@ -1,5 +1,5 @@
 <template>
-  <button class="flex items-center gap-x-3 p-4 rounded-lg 
+  <button type="button" class="flex items-center gap-x-3 p-4 rounded-lg 
     bg-slate-800 hover:bg-slate-600 text-white font-bold font-sans text-lg 
     dark:bg-green-600 dark:hover:bg-green-700" @click="emits('login', props.provider)">Sign up with
     <icon class="text-white" />
