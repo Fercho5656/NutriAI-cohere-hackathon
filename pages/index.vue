@@ -15,7 +15,7 @@
           class="p-2 px-6 w-fit text-2xl bg-gray-50 text-green-400 dark:text-slate-800 rounded-full font-semibold hover:bg-gray-200 dark:hover:bg-gray-300 transition-colors"
           to="/signup">Start my plan now!</nuxt-link>
       </div>
-      <nuxt-img fit="contain" sizes="lg:500px" format="webp" src="/landing-image.png"
+      <nuxt-img fit="contain" sizes="lg:500px" format="webp" src="/landing-image.webp"
         class="hidden lg:block self-end" />
     </section>
     <section class="min-h-screen bg-white dark:bg-green-800 text-gray-700 dark:text-gray-200 py-8">
@@ -40,7 +40,7 @@
             and start your journey to a healthier you!</p>
         </div>
       </div>
-      <nuxt-img fit="contain" sizes="lg:350px" format="webp" src="/image.png"
+      <nuxt-img fit="contain" sizes="lg:350px" format="webp" src="/image.webp"
         class="hidden lg:block self-end mx-auto" />
     </section>
     <section class="min-h-screen p-8 flex flex-col gap-y-8">
