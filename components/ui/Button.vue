@@ -1,13 +1,20 @@
 <template>
-  <button :type="type" :disabled="disabled"
-    class="flex items-center gap-x-3 px-5 py-2 transition-colors font-semibold text-white bg-blue-500 rounded-md hover:opacity-95 focus:outline-none"
-    :class="classes">
-    <slot />
-  </button>
+    <button v-if="behaviour === 'button'" :type="type" :disabled="disabled"
+      class="flex items-center justify-center gap-x-3 px-5 py-2 transition-colors font-semibold text-white bg-blue-500 rounded-md hover:opacity-95 focus:outline-none"
+      :class="classes">
+      <slot />
+    </button>
+    <a v-else :href="href" :disabled="disabled"
+      class="flex items-center gap-x-3 px-5 py-2 transition-colors font-semibold text-white bg-blue-500 rounded-md hover:opacity-95 focus:outline-none"
+      :class="classes">
+      <slot />
+    </a>
 </template>
 
 <script setup lang="ts">
 interface Props {
+  behaviour: 'button' | 'anchor',
+  href?: string
   type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
   color?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'light' | 'dark'
