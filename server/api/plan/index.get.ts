@@ -7,15 +7,7 @@ export default defineEventHandler(async (event): Promise<ISupabaseQuery<IPlan[]>
   const { data, error } = await client
     .from('plan')
     .select('*')
+    .order('created_at', { ascending: false })
   if (data == null) return { data: [], error }
   return { data, error: undefined }
 })
-
-/* export const getAllPlans = async (): Promise<ISupabaseQuery<IPlan[]>> => {
-  const client = useSupabaseClient()
-  const { data, error } = await client
-    .from('plan')
-    .select('*')
-  if (data == null) return { data: [], error }
-  return { data, error }
-} */
