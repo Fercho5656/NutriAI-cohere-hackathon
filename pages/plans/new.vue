@@ -34,6 +34,7 @@ import { IUserStats } from '~~/interfaces/IUserStats';
 import { PaperAirplaneIcon } from '@heroicons/vue/24/solid';
 
 const userStats = ref<IUserStats>()
+const router = useRouter()
 const age = ref()
 const weight = ref()
 const height = ref()
@@ -79,18 +80,29 @@ const onSubmit = async () => {
     imc: (weight.value / ((height.value / 100) ** 2)).toFixed(2),
     energy_requirement: String(energyRequirement.value),
   }
+  // I know I should use Promises.all and do error handling but I barely finished this project <3 
   const { data, error } = await useFetch('/api/user/data', {
     method: 'POST',
     headers: useRequestHeaders(['cookie']) as Record<string, string>,
     body: userStats
   })
+  console.log(data.value)
 
   const { data: data2, error: error2 } = await useFetch('/api/cohere', {
     method: 'POST',
-    body: { energyRequirement: energyRequirement.value}
+    body: { energyRequirement: energyRequirement.value }
   })
 
   console.log(data2.value)
+
+  const { data: data3, error: error3 } = await useFetch('/api/plan', {
+    method: 'POST',
+    body: { menu: data2.value, user_id: data.value?.data?.user_id, stat_id: data.value?.data?.id }
+  })
+
+  console.log(data3.value)
+
+  router.push(`/plans/${data3.value?.data?.id}`)
 
 }
 </script>
