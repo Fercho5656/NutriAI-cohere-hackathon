@@ -128,7 +128,7 @@ const onSubmit = async () => {
       'Content-Type': 'application/json',
       'Cohere-Version': '2022-12-06',
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(dataa),
   })
     .then((res) => res.json())
   console.log(response)
