@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     return_likelihoods: 'NONE',
   }
 
-  const { results } = await $fetch(COHERE_API_GENERATE_URL, {
+  const { results } = await fetch(COHERE_API_GENERATE_URL, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
