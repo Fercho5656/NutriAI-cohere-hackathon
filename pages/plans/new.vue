@@ -109,7 +109,7 @@ const onSubmit = async () => {
   const COHERE_API_GENERATE_URL = 'https://api.cohere.ai/generate'
   const dataa = {
     model: 'xlarge',
-    prompt: `Write an eating plan of 1780 kilocalories in JSON format:\n{\n\"name\": \"Nourish and Fuel\",\n\"kilocalories\": 1780,\n\"breakfast\": [\"1 cup of oatmeal with 1/2 cup of berries and 1 tsp of honey\", \"1 cup of Greek yogurt with 1/2 cup of mixed nuts and 1 tsp of honey\"],\n\"lunch\": [\"2 cups of mixed greens with 1 cup of grilled chicken, 1/4 cup of crumbled feta cheese, and 1/4 cup of sliced red onion\", \"1/2 cup of cooked quinoa with 1/4 cup of black beans, 1/4 cup of chopped tomato, and 1/4 cup of chopped avocado\", \"1 cup of unsweetened almond milk\"],\n\"snack\": [\"1 cup of unsweetened almond milk with 1/2 cup of mixed nuts and 1 tsp of honey\"],\n\"dinner\": [\"1 cup of brown rice with 1 cup of grilled chicken, 1/4 cup of steamed broccoli, and 1/4 cup of sliced red onion\", \"1/2 cup of cooked quinoa with 1/4 cup of black beans, 1/4 cup of chopped tomato, and 1/4 cup of chopped avocado\", \"1 cup of unsweetened almond milk\", \"1 apple\"]\n}\n--\nWrite an eating plan of ${energyRequirement.value - 500} kilocalories in JSON format:`,
+    prompt: `Write an eating plan of 1780 kilocalories in JSON format:\n{\n\"name\": \"Nourish and Fuel\",\n\"kilocalories\": 1780,\n\"breakfast\": [\"1 cup of oatmeal with 1/2 cup of berries and 1 tsp of honey\", \"1 cup of Greek yogurt with 1/2 cup of mixed nuts and 1 tsp of honey\"],\n\"lunch\": [\"2 cups of mixed greens with 1 cup of grilled chicken, 1/4 cup of crumbled feta cheese, and 1/4 cup of sliced red onion\", \"1/2 cup of cooked quinoa with 1/4 cup of black beans, 1/4 cup of chopped tomato, and 1/4 cup of chopped avocado\", \"1 cup of unsweetened almond milk\"],\n\"snack\": [\"1 cup of unsweetened almond milk with 1/2 cup of mixed nuts and 1 tsp of honey\"],\n\"dinner\": [\"1 cup of brown rice with 1 cup of grilled chicken, 1/4 cup of steamed broccoli, and 1/4 cup of sliced red onion\", \"1/2 cup of cooked quinoa with 1/4 cup of black beans, 1/4 cup of chopped tomato, and 1/4 cup of chopped avocado\", \"1 cup of unsweetened almond milk\", \"1 apple\"]\n}\n--\nWrite an eating plan of ${1500 - 500} kilocalories in JSON format:`,
     max_tokens: 40,
     temperature: 0.3,
     k: 0,
@@ -120,18 +120,18 @@ const onSubmit = async () => {
     return_likelihoods: 'NONE',
   }
 
-  const { results } = await fetch(COHERE_API_GENERATE_URL, {
+  const response = fetch('https://api.cohere.ai/generate', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      Authorization: `BEARER ${COHERE_API_KEY}`,
-      "Content-Type": 'application/json',
-      "Cohere-Version": '2022-12-06'
+      Authorization: `BEARER 4vQrZ6kHFoNh3Ufv2qxMrFSAhgGFuKL7NmsgOpd2`,
+      'Content-Type': 'application/json',
+      'Cohere-Version': '2022-12-06',
     },
-    body: JSON.stringify(data)
-  }).then(res => res.json())
-
-    console.log({results})
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+  console.log(response)
 
 
   const { data: data3, error: error3 } = await useFetch('/api/plan', {
