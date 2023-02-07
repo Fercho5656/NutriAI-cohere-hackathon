@@ -97,6 +97,10 @@ useHead({
     }
   ]
 })
+
+definePageMeta({
+  middleware: 'guest'
+})
 </script>
 
 <style scoped>

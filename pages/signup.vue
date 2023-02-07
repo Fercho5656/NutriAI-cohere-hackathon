@@ -18,6 +18,11 @@
 </template>
 
 <script setup lang="ts">
+
+definePageMeta({
+  middleware: ['guest'],
+})
+
 const client = useSupabaseAuthClient()
 const user = useSupabaseUser()
 const router = useRouter()
