@@ -4,6 +4,7 @@ interface IMenu {
   lunch: Array<string>
   snack: Array<string>
   dinner: Array<string>
+  kilocalories: number;
 }
 
 export default interface IPlan {
