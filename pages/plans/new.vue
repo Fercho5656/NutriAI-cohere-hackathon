@@ -133,7 +133,8 @@ const onSubmit = async () => {
   })
     .then((res) => res.json())
 
-  const str = response.body.generations[0].text
+    
+  const str = response.generations[0].text
   const splitStr = str.split('--')[0]
   const strIdx = splitStr.indexOf('}')
   const strObj = splitStr.slice(0, strIdx + 1)
