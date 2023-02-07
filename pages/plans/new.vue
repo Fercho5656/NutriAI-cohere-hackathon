@@ -43,6 +43,7 @@ const userStats = ref<IUserStats>()
 const router = useRouter()
 const age = ref()
 const weight = ref()
+const data2 = ref()
 const height = ref()
 const activityFactor = ref('-1')
 const gender = ref('-1')
@@ -97,12 +98,12 @@ const onSubmit = async () => {
   })
   console.log(data.value)
 
-  const { data: data2, error: error2 } = await useFetch('/api/cohere', {
+  /* const { data: data2, error: error2 } = await useFetch('/api/cohere', {
     method: 'POST',
     body: { energyRequirement: energyRequirement.value }
   })
 
-  console.log(data2.value)
+  console.log(data2.value) */
 
 
   const COHERE_API_KEY = '4vQrZ6kHFoNh3Ufv2qxMrFSAhgGFuKL7NmsgOpd2'
@@ -120,7 +121,7 @@ const onSubmit = async () => {
     return_likelihoods: 'NONE'
   }
 
-  const response = fetch('https://api.cohere.ai/generate', {
+  const response = await fetch('https://api.cohere.ai/generate', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -131,7 +132,9 @@ const onSubmit = async () => {
     body: JSON.stringify(dataa),
   })
     .then((res) => res.json())
-  console.log(response)
+
+
+  data2.value = JSON.parse(response.generations[0].text.split('--')[0])
 
 
   const { data: data3, error: error3 } = await useFetch('/api/plan', {
