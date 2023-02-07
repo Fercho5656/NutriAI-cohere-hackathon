@@ -22,5 +22,6 @@ export default defineEventHandler(async (event) => {
   const splitStr = str.split('--')[0]
   const strIdx = splitStr.indexOf('}')
   const strObj = splitStr.slice(0, strIdx + 1)
-  return JSON.parse(strObj)
+  return response
+  // return JSON.parse(strObj)
 })

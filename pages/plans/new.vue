@@ -110,6 +110,7 @@ const onSubmit = async () => {
   })
 
   console.log(data3.value)
+  console.log(error3.value)
 
   router.push(`/plans/${data3.value?.data?.id}`)
 
