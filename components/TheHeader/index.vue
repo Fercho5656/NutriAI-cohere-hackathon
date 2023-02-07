@@ -6,7 +6,7 @@
       </nuxt-link>
       <ul class="flex justify-around items-center gap-x-5 w-full">
         <li>
-          <nuxt-link to="/home">Home</nuxt-link>
+          <nuxt-link to="/plans">My Plans</nuxt-link>
         </li>
         <li class="ml-auto flex items-center gap-x-8">
           <button @click="toggleDark()">
