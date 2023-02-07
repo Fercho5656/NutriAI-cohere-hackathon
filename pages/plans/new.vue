@@ -84,5 +84,13 @@ const onSubmit = async () => {
     headers: useRequestHeaders(['cookie']) as Record<string, string>,
     body: userStats
   })
+
+  const { data: data2, error: error2 } = await useFetch('/api/cohere', {
+    method: 'POST',
+    body: { energyRequirement: energyRequirement.value}
+  })
+
+  console.log(data2.value)
+
 }
 </script>
